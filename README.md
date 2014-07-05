@@ -1,16 +1,24 @@
 wiesels-mousejs
 ===============
 
-# Install
+## Install
 
 ```
     npm install wiesels-mousejs
 ```
 
-# Use
+## Init
 
 ```
     var mouse = require("wiesels-mousejs");
+```
+
+### Click  
+
+emulate a click event
+
+```
+    mouse.click();
 ```
 
 ### Move

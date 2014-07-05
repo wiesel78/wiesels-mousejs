@@ -13,10 +13,9 @@ mouse.x( 100 );
 
 // move the mouse position to x=200 y=200
 console.log("move to x=200, y=200");
-mouse.move( 200, 200 );
+mouse.move( 1000, 200 );
 
-
-
-mouse.move(1000,500);
-//mouse.close();
+// emulate a mouse click
+console.log("click");
+mouse.click();
 

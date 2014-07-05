@@ -6,6 +6,17 @@ var ref = require("ref");
 var intPtr = ref.refType('int');
 
 
+var xlibext = ffi.Library('libXtst', {
+    "XTestFakeButtonEvent" : ["void", 
+        [   
+            "pointer", 
+            "int", 
+            "bool", 
+            "int"
+        ]
+    ]
+});
+
 var xlib = ffi.Library('libX11', {
     "XOpenDisplay" : [ "pointer", [ "int" ] ],
     "XCloseDisplay" : [ "int", [ "pointer" ] ],
@@ -98,6 +109,16 @@ module.exports.moveRelative = function( x, y ){
     module.exports.move( mouse.rootX + relX, mouse.rootY + relY );
 
 };
+
+
+/** emulate a mouse click event
+ * @return void
+ */
+module.exports.click = function(){
+    xlibext.XTestFakeButtonEvent( displayPtr, 1, 1, 0);
+    xlibext.XTestFakeButtonEvent( displayPtr, 1, 0, 0);
+    module.exports.flush();
+}
 
 
 /** flush all operations

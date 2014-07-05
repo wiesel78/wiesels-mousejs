@@ -1,6 +1,6 @@
 {
   "name": "wiesels-mousejs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "mouse move,click,get position ...",
   "main": "index.js",
   "scripts": {
