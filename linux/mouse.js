@@ -79,6 +79,7 @@ module.exports.get = function(){
 module.exports.move = function( x, y ){
     xlib.XSelectInput( displayPtr, rootWindow, KeyReleaseMask );
     xlib.XWarpPointer( displayPtr, 0, rootWindow, 0, 0, 0, 0, x, y );
+    module.exports.flush();
 };
 
 
@@ -98,12 +99,22 @@ module.exports.moveRelative = function( x, y ){
 
 };
 
+
+/** flush all operations
+ * @return void
+ */
+module.exports.flush = function(){
+    if( displayPtr ){
+        xlib.XFlush( displayPtr );
+    }
+}
+
 /** close the mouse object
  * @return void
  */
 module.exports.close = function(){
     if( displayPtr ){
-        xlib.XFlush( displayPtr );
+        module.exports.flush();
         xlib.XCloseDisplay( displayPtr );
     }
 }

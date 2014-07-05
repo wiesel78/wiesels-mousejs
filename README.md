@@ -21,6 +21,14 @@ wiesels-mousejs
 
 set the mouse position to x = 100 and y = 300
 
+### MoveRelative
+
+```
+    mouse.moveRelative( 20, 0 );
+```
+
+set the position relative to the current position  
+
 ### X
 
 getter/setter

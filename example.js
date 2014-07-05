@@ -15,5 +15,8 @@ mouse.x( 100 );
 console.log("move to x=200, y=200");
 mouse.move( 200, 200 );
 
-mouse.close();
+
+
+mouse.move(1000,500);
+//mouse.close();
 
