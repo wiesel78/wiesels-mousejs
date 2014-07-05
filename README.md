@@ -1,4 +1,54 @@
 wiesels-mousejs
 ===============
 
-node ffi mouse api
+# Install
+
+```
+    npm install wiesels-mousejs
+```
+
+# Use
+
+```
+    var mouse = require("wiesels-mousejs");
+```
+
+### Move
+
+```
+    mouse.move( 100, 300 )
+```
+
+set the mouse position to x = 100 and y = 300
+
+### X
+
+getter/setter
+
+```
+    mouse.x() // get the current x position
+    mouse.x(20) // set the x position to 20
+```
+
+### Y 
+
+getter/setter
+
+```
+    mouse.y() // get the current x position
+    mouse.y(300) // set the y position to 300 
+```
+
+### open and close
+
+open and close the mouse object.  
+require("wiesels-mousejs") do a "open" automaticaly.
+
+
+```
+    mouse.open();
+
+    // do any mouse operations
+
+    mouse.close();
+```

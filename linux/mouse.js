@@ -26,8 +26,8 @@ var xlib = ffi.Library('libX11', {
 });
 
 
-var displayPtr = xlib.XOpenDisplay( 0 );
-var rootWindow = xlib.XRootWindow( displayPtr, 0 );
+var displayPtr = null;
+var rootWindow = null;
     
 var rootXPtr            = ref.alloc('int');
 var rootYPtr            = ref.alloc('int');
@@ -37,7 +37,21 @@ var windowXPtr          = ref.alloc('int');
 var windowYPtr          = ref.alloc('int');
 var maskPtr             = ref.alloc('int');
 
-module.exports.getMouseInfo = function(){
+module.exports.open = function(){
+    if( !displayPtr ){
+        displayPtr = xlib.XOpenDisplay( 0 );
+        rootWindow = xlib.XRootWindow( displayPtr, 0 );
+    }
+}
+
+module.exports.open();
+
+/** get a mouse object
+ * @return MouseInfo
+ */
+module.exports.get = function(){
+
+    module.exports.open();
 
     xlib.XQueryPointer(
         displayPtr, rootWindow, 
@@ -57,27 +71,75 @@ module.exports.getMouseInfo = function(){
     }
 }
 
-module.exports.mouseMove = function( x, y ){
-
+/** set mouse position
+ * @param x : Number : the x position
+ * @param y : Number : the y position
+ * @return void
+ */
+module.exports.move = function( x, y ){
     xlib.XSelectInput( displayPtr, rootWindow, KeyReleaseMask );
     xlib.XWarpPointer( displayPtr, 0, rootWindow, 0, 0, 0, 0, x, y );
-
 };
 
-module.exports.mouseMoveRelative = function( x, y ){
+
+/** set mouse position relative to the current position
+ * @param x : Number : the relative x position
+ * @param y : Number : the relative y position
+ * @return void
+ */
+module.exports.moveRelative = function( x, y ){
     
     var relX = x ? x : 0 ;
     var relY = y ? y : 0 ;
 
-    var mouseInfo = module.exports.getMouseInfo();
+    var mouse = module.exports.get();
 
-    module.exports.mouseMove( mouseInfo.rootX + relX, mouseInfo.rootY + relY );
+    module.exports.move( mouse.rootX + relX, mouse.rootY + relY );
 
 };
 
+/** close the mouse object
+ * @return void
+ */
 module.exports.close = function(){
-
-    xlib.XFlush( displayPtr );
-    xlib.XCloseDisplay( displayPtr );
-
+    if( displayPtr ){
+        xlib.XFlush( displayPtr );
+        xlib.XCloseDisplay( displayPtr );
+    }
 }
+
+/** get or set the x position
+ * @param x : Number : if defined then the x position is set to x
+ * @return number
+ */
+module.exports.x = function( x ){
+    var mouse = module.exports.get();
+    
+    if( x && typeof (x) == "number" ){
+        module.exports.move( x, mouse.rootY );
+        
+        return x;
+    }else{
+        return mouse.rootX;
+    }
+}
+
+
+/** get or set the y position
+ * @param y : Number : if defined then the y position is set to y
+ * @return number
+ */
+module.exports.y = function( y ){
+    var mouse = module.exports.get();
+    
+    if( y && typeof (y) == "number" ){
+        module.exports.move( mouse.rootX, y );
+        
+        return y;
+    }else{
+        return mouse.rootY;
+    }
+}
+
+
+
