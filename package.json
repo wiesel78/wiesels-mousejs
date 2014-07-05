@@ -1,0 +1,21 @@
+{
+  "name": "wiesels-mousejs",
+  "version": "0.1.0",
+  "description": "mouse move,click,get position ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mousemove",
+    "mouse",
+    "maus",
+    "motion"
+  ],
+  "author": "wiesel78",
+  "license": "2-clause-BSD",
+  "dependencies": {
+    "ffi": "*",
+    "ref": "*"
+  }
+}
