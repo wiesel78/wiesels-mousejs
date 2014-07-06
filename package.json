@@ -1,6 +1,6 @@
 {
   "name": "wiesels-mousejs",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "mouse move,click,get position ...",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
   "license": "2-clause-BSD",
   "dependencies": {
     "ffi": "*",
-    "ref": "*"
+    "ref": "*",
+    "ref-struct": "*"
   },
   "devDependencies": {},
   "repository": {
