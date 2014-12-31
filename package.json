@@ -12,12 +12,15 @@
     "maus",
     "motion"
   ],
-  "author": "wiesel78",
+  "author": {
+    "name": "wiesel78"
+  },
   "license": "2-clause-BSD",
   "dependencies": {
     "ffi": "*",
     "ref": "*",
-    "ref-struct": "*"
+    "ref-struct": "*",
+    "NodObjC": "~1.0.0"
   },
   "devDependencies": {},
   "repository": {
@@ -27,5 +30,27 @@
   "bugs": {
     "url": "https://github.com/wiesel78/wiesels-mousejs/issues"
   },
-  "homepage": "https://github.com/wiesel78/wiesels-mousejs"
+  "homepage": "https://github.com/wiesel78/wiesels-mousejs",
+  "gitHead": "cc03d6129039441debbe64aced26a83c029aeb82",
+  "_id": "wiesels-mousejs@0.2.3",
+  "_shasum": "02ded4254a75c64e6e84b6ab3999006b4d8d056e",
+  "_from": "wiesels-mousejs@",
+  "_npmVersion": "1.4.14",
+  "_npmUser": {
+    "name": "wiesel78",
+    "email": "wurst78@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "wiesel78",
+      "email": "wurst78@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "02ded4254a75c64e6e84b6ab3999006b4d8d056e",
+    "tarball": "http://registry.npmjs.org/wiesels-mousejs/-/wiesels-mousejs-0.2.3.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/wiesels-mousejs/-/wiesels-mousejs-0.2.3.tgz",
+  "readme": "ERROR: No README data found!"
 }
