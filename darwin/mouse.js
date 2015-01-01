@@ -8,6 +8,8 @@ module.exports.init = function (){
     pool = $.NSAutoreleasePool('alloc')('init');
 };
 
+module.exports.init();
+
 /**
  * 
  * Just that we don't get undefined method, when calling a linux method
@@ -21,12 +23,13 @@ module.exports.getScreenFrame = function(){
     return frame;
 }
 
-/** get a mouse object
+/** 
+ * get a mouse object
  * 
  * We also need to get a window height
  * because y zero position starts from bottom of the screen
- * and when we set y position than it starts from top, so we simply
- * substract pos.y from windowHeight to get expected y position
+ * and when we set y position (using mouse.y(45)) than it starts from top, so we simply
+ * subtract pos.y from windowHeight to get expected y position
  * 
  * @return MouseInfo
  */
