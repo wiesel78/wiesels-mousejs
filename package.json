@@ -1,6 +1,6 @@
 {
   "name": "wiesels-mousejs",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "mouse move,click,get position ...",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/wiesel78/wiesels-mousejs",
   "gitHead": "cc03d6129039441debbe64aced26a83c029aeb82",
-  "_id": "wiesels-mousejs@0.2.3",
+  "_id": "wiesels-mousejs@0.2.4",
   "_shasum": "02ded4254a75c64e6e84b6ab3999006b4d8d056e",
   "_from": "wiesels-mousejs@",
   "_npmVersion": "1.4.14",
@@ -48,9 +48,9 @@
   ],
   "dist": {
     "shasum": "02ded4254a75c64e6e84b6ab3999006b4d8d056e",
-    "tarball": "http://registry.npmjs.org/wiesels-mousejs/-/wiesels-mousejs-0.2.3.tgz"
+    "tarball": "http://registry.npmjs.org/wiesels-mousejs/-/wiesels-mousejs-0.2.4.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/wiesels-mousejs/-/wiesels-mousejs-0.2.3.tgz",
+  "_resolved": "https://registry.npmjs.org/wiesels-mousejs/-/wiesels-mousejs-0.2.4.tgz",
   "readme": "ERROR: No README data found!"
 }
