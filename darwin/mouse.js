@@ -78,14 +78,10 @@ module.exports.click = function(isRight){
     var clickDown = $.CGEventCreateMouseEvent(null, $.kCGEventLeftMouseDown, $.CGPointMake(pos.x, pos.y), $.kCGMouseButtonLeft);
     $.CGEventPost($.kCGHIDEventTap, clickDown);
     
-    /*if( typeof isRight === "boolean" && isRight === true ){
-        var clickDown = $.CGEventCreateMouseEvent(null, $.kCGEventRightMouseDown, $.CGPointMake(pos.x, pos.y), $.kCGEventRightMouseDown);
-        $.CGEventPost($.kCGHIDEventTap, clickDown);
-        
-    } else {
-        var clickDown = $.CGEventCreateMouseEvent(null, $.kCGEventLeftMouseDown, $.CGPointMake(pos.x, pos.y), $.kCGMouseButtonLeft);
-        $.CGEventPost($.kCGHIDEventTap, clickDown);
-    }*/
+    setTimeout(function(){
+        var clickUp = $.CGEventCreateMouseEvent(null, $.kCGEventLeftMouseUp, $.CGPointMake(pos.x, pos.y), $.kCGMouseButtonLeft);
+        $.CGEventPost($.kCGHIDEventTap, clickUp);
+    }, 10);
     
 };
 
