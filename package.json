@@ -17,13 +17,13 @@
     },
     "license": "2-clause-BSD",
     "dependencies": {
-        "NodObjC": "~1.0.0",
         "edge" :  "*"
     },
     "optionalDependencies": { 
         "ffi": "*",
         "ref": "*",
-        "ref-struct": "*"
+        "ref-struct": "*",
+        "nodobjc": "2.1.0"
     },
   "devDependencies": {},
   "repository": {
